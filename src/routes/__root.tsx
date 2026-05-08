@@ -29,14 +29,32 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "XNOVA — Innovating Smart Solutions" },
+      { name: "description", content: "XNOVA delivers innovative technology, engineering and digital transformation solutions." },
+      { name: "author", content: "XNOVA" },
+      // Prevent search engines from indexing sensitive pages
+      { name: "robots", content: "index, follow" },
+      // Open Graph
+      { property: "og:title", content: "XNOVA — Innovating Smart Solutions" },
+      { property: "og:description", content: "Where creativity meets engineering — scalable, future-ready solutions." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:site_name", content: "XNOVA" },
+      // Twitter
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@xnova" },
+      // Security meta tags
+      // Prevents MIME-type sniffing
+      { httpEquiv: "X-Content-Type-Options", content: "nosniff" },
+      // Blocks the page from being embedded in iframes (clickjacking protection)
+      { httpEquiv: "X-Frame-Options", content: "SAMEORIGIN" },
+      // Forces HTTPS for 1 year (HSTS) — only effective when served over HTTPS
+      { httpEquiv: "Strict-Transport-Security", content: "max-age=31536000; includeSubDomains" },
+      // Referrer policy — don't leak full URL to third parties
+      { name: "referrer", content: "strict-origin-when-cross-origin" },
+    ],
+    links: [
+      // Prevent browsers from pre-fetching DNS for external domains unnecessarily
+      { rel: "dns-prefetch", href: "https://xnova.tech" },
     ],
   }),
   shellComponent: RootShell,
