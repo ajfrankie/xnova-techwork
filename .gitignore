@@ -30,6 +30,8 @@ dist-ssr
 
 # Bun
 .bun/
+# bun.lockb is binary and version-sensitive — use bun.lock (text) instead
+bun.lockb
 
 # OS files
 .DS_Store
